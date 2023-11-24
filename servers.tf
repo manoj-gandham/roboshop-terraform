@@ -165,4 +165,7 @@ resource "aws_route53_record" "payment" {
   records = [aws_instance.frontend.private_ip]
 }
 
+output "dns-name-frontend" {
+  value = aws_route53_record.frontend.name
+}
 
