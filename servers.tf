@@ -96,3 +96,7 @@ resource "aws_instance" "payment" {
     Name = "payment"
   }
 }
+
+output "public_ip" {
+  value = aws_instance.cart.instance_type
+}
