@@ -4,10 +4,6 @@ data "aws_ami" "centos" {
   owners           = ["973714476881"]
 }
 
-output "ami_id" {
-  value = data.aws_ami.centos.image_id
-}
-
 resource "aws_instance" "frontend" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
@@ -15,6 +11,14 @@ resource "aws_instance" "frontend" {
   tags = {
     Name = "frontend"
   }
+}
+
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z07849831FFYEHNKDVTOV"
+  name    = "frontend-dev.mdevops333.online"
+  type    = "c"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
 }
 
 resource "aws_instance" "mongodb" {
@@ -98,6 +102,4 @@ resource "aws_instance" "payment" {
   }
 }
 
-output "public_ip" {
-  value = aws_instance.cart.instance_type
-}
+
