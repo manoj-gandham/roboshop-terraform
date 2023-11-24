@@ -166,6 +166,6 @@ resource "aws_route53_record" "payment" {
 }
 
 output "dns-name-frontend" {
-  value = aws_route53_record.frontend.name
+  value = aws_route53_record.frontend.provisioner
 }
 
