@@ -13,8 +13,12 @@ resource "aws_instance" "frontend" {
   }
 }
 
+variable "zone_id" {
+  default = "Z07849831FFYEHNKDVTOV"
+}
+
 resource "aws_route53_record" "frontend" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "frontend-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -30,7 +34,7 @@ resource "aws_instance" "mongodb" {
   }
 }
 resource "aws_route53_record" "mongodb" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "mongodb-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -46,7 +50,7 @@ resource "aws_instance" "catalogue" {
   }
 }
 resource "aws_route53_record" "catalogue" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "catalogue-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -62,7 +66,7 @@ resource "aws_instance" "redis" {
   }
 }
 resource "aws_route53_record" "redis" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "redis-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -78,7 +82,7 @@ resource "aws_instance" "user" {
   }
 }
 resource "aws_route53_record" "user" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "user-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -94,7 +98,7 @@ resource "aws_instance" "cart" {
   }
 }
 resource "aws_route53_record" "cart" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "cart-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -110,7 +114,7 @@ resource "aws_instance" "mysql" {
   }
 }
 resource "aws_route53_record" "mysql" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "mysql-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -126,7 +130,7 @@ resource "aws_instance" "shipping" {
   }
 }
 resource "aws_route53_record" "shipping" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "shipping-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -142,7 +146,7 @@ resource "aws_instance" "rabbitmq" {
   }
 }
 resource "aws_route53_record" "rabbitmq" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "rabbitmq-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
@@ -158,7 +162,7 @@ resource "aws_instance" "payment" {
   }
 }
 resource "aws_route53_record" "payment" {
-  zone_id = "Z07849831FFYEHNKDVTOV"
+  zone_id = var.zone_id
   name    = "payment-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
