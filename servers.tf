@@ -186,11 +186,4 @@ resource "aws_route53_record" "payment" {
   records = [aws_instance.frontend.private_ip]
 }
 
-output "dns-name-frontend" {
-  value = aws_route53_record.frontend.name
-}
-
-output "ami_id" {
-  value = data.aws_ami.centos.image_id
-}
 
