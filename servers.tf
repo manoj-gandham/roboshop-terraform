@@ -20,7 +20,7 @@ variable "components" {
     }
     catalogue = {
       name = "catalogue"
-      instance_type = "t3.micro"
+      instance_type = "t3.small"
     }
     redis = {
       name = "redis"
@@ -32,7 +32,7 @@ variable "components" {
     }
     cart = {
       name = "cart"
-      instance_type = "t3.micro"
+      instance_type = "t3.small"
     }
     mysql = {
       name = "mysql"
@@ -40,7 +40,7 @@ variable "components" {
     }
     shipping = {
       name = "shipping"
-      instance_type = "t3.micro"
+      instance_type = "t3.medium"
     }
     rabbitmq = {
       name = "rabbitmq"
@@ -48,7 +48,7 @@ variable "components" {
     }
     payment = {
       name = "payment"
-      instance_type = "t3.micro"
+      instance_type = "t3.medium"
     }
   }
 }
