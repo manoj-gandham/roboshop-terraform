@@ -65,13 +65,14 @@ resource "aws_instance" "instance" {
 }
 
 
-#resource "aws_route53_record" "frontend" {
-#  zone_id = "Z07849831FFYEHNKDVTOV"
-#  name    = "frontend-dev.mdevops333.online"
-#  type    = "A"
-#  ttl     = 30
-#  records = [aws_instance.frontend.private_ip]
-#}
+resource "aws_route53_record" "frontend" {
+  for_each = var.components
+  zone_id = "Z07849831FFYEHNKDVTOV"
+  name    = "${each.value["name"]}-dev.mdevops333.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instance[each.value["name"]].private_ip]
+}
 #
 #resource "aws_instance" "mongodb" {
 #  ami           = data.aws_ami.centos.image_id
