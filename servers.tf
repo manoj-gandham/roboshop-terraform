@@ -8,7 +8,27 @@ resource "aws_instance" "instance" {
     Name = each.value["name"]
   }
 }
-resource "aws_route53_record" "frontend" {
+resource "null_resource" "provisioner" {
+  depends_on = [aws_instance.instance,aws_route53_record.records]
+  for_each = each.components
+  provisioner "remote-exec" {
+
+    connection {
+      type     = "ssh"
+      user     = "root"
+      password = "DevOps321"
+      host     = aws_instance.instance[each.value["name"]].private_ip
+    }
+
+    inline = [
+      "rm -rf roboshop-shell",
+      "git clone https://github.com/manoj-gandham/roboshop-shell.git",
+      "cd roboshop-shell",
+      "sudo bash ${each.value["name"]}.sh"
+    ]
+  }
+}
+resource "aws_route53_record" "records" {
   for_each = var.components
   zone_id = "Z07849831FFYEHNKDVTOV"
   name    = "${each.value["name"]}-dev.mdevops333.online"
