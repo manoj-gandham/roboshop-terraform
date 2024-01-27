@@ -22,13 +22,13 @@ resource "null_resource" "provisioner" {
       "rm -rf roboshop-shell",
       "git clone https://github.com/manoj-gandham/roboshop-shell.git",
       "cd roboshop-shell",
-      "sudo bash ${var.components_name}.sh ${var.password}"
+      "sudo bash ${var.component_name}.sh ${var.password}"
     ]
   }
 }
 resource "aws_route53_record" "records" {
   zone_id = "Z08267471ZUUM4K7Q0L0O"
-  name    = "${var.components_name}-dev.mdevops333.online"
+  name    = "${var.component_name}-dev.mdevops333.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.instance.private_ip]
