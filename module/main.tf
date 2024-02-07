@@ -9,15 +9,15 @@ resource "aws_instance" "instance" {
   }
 }
 resource "null_resource" "provisioner" {
-  depends_on = [aws_instance.instance,aws_route53_record.records]
-#  triggers = {
-#    private_ip = aws_instance.instance.private_ip
-#  }
+  depends_on = [aws_instance.instance, aws_route53_record.records]
+  triggers = {
+    private_ip = aws_instance.instance.private_ip
+  }
   provisioner "remote-exec" {
 
     connection {
       type     = "ssh"
-      user     = "root"
+      user     = "centos"
       password = "DevOps321"
       host     = aws_instance.instance.private_ip
     }
