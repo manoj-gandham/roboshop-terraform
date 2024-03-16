@@ -6,7 +6,3 @@ module "vpc" {
   tags = local.tags
   env = var.env
 }
-
-output "subnet_id" {
-  value = module.vpc
-}
