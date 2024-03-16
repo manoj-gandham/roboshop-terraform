@@ -3,6 +3,6 @@ locals {
     project = "Roboshop"
     bussiness_unit = "Retail"
     bussiness_type = "Ecommerce"
-    tags = local.tags
+    env = var.env
   }
 }
