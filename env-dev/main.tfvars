@@ -34,7 +34,8 @@ app = {
     subnet_name = "web"
   }
   catalogue = {
-    name = "catalogue"
+    name          = "catalogue"
     instance_type = "t3.small"
-    subnet_name = "app"
+    subnet_name   = "app"
+  }
 }
