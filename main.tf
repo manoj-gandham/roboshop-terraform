@@ -12,12 +12,12 @@ module "vpc" {
 module "app" {
   source = "git::https://github.com/manoj-gandham/tf-module-app.git"
 
-  for_each      = var.app
-  instance_type = each.value["instance_type"]
-  name = each.value["name"]
+  for_each         = var.app
+  instance_type    = each.value["instance_type"]
+  name             = each.value["name"]
   desired_capacity = each.value["desired_capacity"]
-  max_size = ["max_size"]
-  min_size = ["min_size"]
+  max_size         = each.value["max_size"]
+  min_size         = each.value["min_size"]
 
   env          = var.env
   bastion_cidr = var.bastion_cidr
