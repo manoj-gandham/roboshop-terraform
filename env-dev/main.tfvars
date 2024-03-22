@@ -4,6 +4,8 @@ default_vpc_id = "vpc-077b7a752d4e75a4d"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-0f8e7bc72adc68c41"
 kms_arn = "arn:aws:kms:us-east-1:851725215534:key/e8f1906a-a356-4f85-9dca-28dd3394a727"
+domain_name = "mdevops333.online"
+domain_id = "Z08267471ZUUM4K7Q0L0O"
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -42,6 +44,8 @@ app = {
     max_size           = 10
     min_size           = 1
     app_port           = 80
+    listener_priority  = 1
+    lb_type = "public"
   }
   catalogue = {
     name          = "catalogue"
@@ -52,6 +56,9 @@ app = {
     max_size           = 10
     min_size           = 1
     app_port           = 8080
+    listener_priority  = 1
+    lb_type = "private"
+
   }
 #  user = {
 #    name          = "user"

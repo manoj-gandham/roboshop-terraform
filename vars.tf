@@ -13,3 +13,6 @@ variable "rabbitmq" {}
 variable "alb" {}
 
 variable "kms_arn" {}
+
+variable "domain_name" {}
+variable "domain_id" {}
