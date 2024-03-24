@@ -114,10 +114,11 @@ module "app" {
 
   env = var.env
   bastion_cidr = var.bastion_cidr
-  tags =  local.tags
+  tags = merge(local.tags, { monitor = "true" })
   domain_name = var.domain_name
   domain_id = var.domain_id
   kms_arn = var.kms_arn
+  monitor_cidr = var.monitor_cidr
 
   subnet_ids     = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
   vpc_id         = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
