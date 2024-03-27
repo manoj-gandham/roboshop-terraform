@@ -1,3 +1,3 @@
-@Library('roboshop-project') _
+@Library('Roboshop-project') _
 
 terraform()
