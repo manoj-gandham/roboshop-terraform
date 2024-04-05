@@ -4,7 +4,7 @@ monitor_cidr = ["172.31.13.116/32"]
 default_vpc_id = "vpc-0e3ac4e852080fc42"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-061b9f27640897cac"
-kms_arn = "arn:aws:kms:us-east-1:851725215534:key/e8f1906a-a356-4f85-9dca-28dd3394a727"
+kms_arn = "arn:aws:kms:us-east-1:992382416809:key/a4533fff-1568-4f3e-987e-f767166b769c"
 domain_name = "mdevops333.online"
 domain_id = "Z006526814H0DPPHWNMT3"
 
