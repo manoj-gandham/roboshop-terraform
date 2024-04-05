@@ -1,12 +1,13 @@
 env = "prod"
-bastion_cidr = ["172.31.92.161/32"]
+bastion_cidr = ["172.31.23.67/32"]
 monitor_cidr = ["172.31.13.116/32"]
-default_vpc_id = "vpc-077b7a752d4e75a4d"
+default_vpc_id = "vpc-0e3ac4e852080fc42"
 default_vpc_cidr = "172.31.0.0/16"
-default_vpc_rtid = "rtb-0f8e7bc72adc68c41"
+default_vpc_rtid = "rtb-061b9f27640897cac"
 kms_arn = "arn:aws:kms:us-east-1:851725215534:key/e8f1906a-a356-4f85-9dca-28dd3394a727"
 domain_name = "mdevops333.online"
-domain_id = "Z08267471ZUUM4K7Q0L0O"
+domain_id = "Z006526814H0DPPHWNMT3"
+
 vpc = {
   main = {
     cidr_block = "10.100.0.0/16"
